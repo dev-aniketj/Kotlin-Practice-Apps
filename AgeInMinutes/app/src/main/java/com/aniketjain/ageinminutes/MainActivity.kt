@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             val day = calendar.get(Calendar.DAY_OF_MONTH)
             val dpd = DatePickerDialog(
                 this,
-                { _, _, _, _ ->
+                { _, year, month, day ->
 
                     // 1st tv setUp
                     val selectedDate = "$day/${month + 1}/$year"
@@ -43,11 +43,14 @@ class MainActivity : AppCompatActivity() {
                     val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH)
                     val date = sdf.parse(selectedDate)
                     val selectedDateInMin = date!!.time / (1000 * 60)
+                    val selectedDateInHour = date.time / (1000 * 60 * 60)
 
                     val currentDate = sdf.parse(sdf.format(System.currentTimeMillis()))
                     val currentDateInMin = currentDate!!.time / (1000 * 60)
+                    val currentDateInHour = currentDate.time / (1000 * 60 * 60)
 
                     binding.minTv.text = (currentDateInMin - selectedDateInMin).toString()
+                    binding.hourTv.text = (currentDateInHour - selectedDateInHour).toString()
 
                 }, year, month, day
             )
