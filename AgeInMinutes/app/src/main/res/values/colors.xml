@@ -16,5 +16,8 @@
 
     <color name="statusBarColor">#FF2E63</color>
     <color name="mainBGColor">#EAEAEA</color>
-    <color name="headingColor">#252A34</color>
+    <color name="textColor1">#252A34</color>
+    <color name="textBGColor">#08D9D6</color>
+    <color name="textColor2">#EAEAEA</color>
+
 </resources>
