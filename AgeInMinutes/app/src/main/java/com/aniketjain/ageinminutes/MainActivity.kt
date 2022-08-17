@@ -31,9 +31,9 @@ class MainActivity : AppCompatActivity() {
             val year = calendar.get(Calendar.YEAR)
             val month = calendar.get(Calendar.MONTH)
             val day = calendar.get(Calendar.DAY_OF_MONTH)
-            DatePickerDialog(
+            val dpd = DatePickerDialog(
                 this,
-                DatePickerDialog.OnDateSetListener { _, year, month, day ->
+                { _, _, _, _ ->
 
                     // 1st tv setUp
                     val selectedDate = "$day/${month + 1}/$year"
@@ -50,7 +50,9 @@ class MainActivity : AppCompatActivity() {
                     binding.minTv.text = (currentDateInMin - selectedDateInMin).toString()
 
                 }, year, month, day
-            ).show()
+            )
+            dpd.datePicker.maxDate = (Date().time - 86400000)   // not select the future date
+            dpd.show()
         }
     }
 }
