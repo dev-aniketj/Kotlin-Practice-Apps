@@ -4,31 +4,100 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mainBGColor"
+    android:gravity="center"
     android:orientation="vertical"
+    android:padding="20dp"
     tools:context=".MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:letterSpacing="0.03"
-        android:text="Calculator Your"
+        android:letterSpacing="0.025"
+        android:text="calculate your"
         android:textAllCaps="true"
         android:textColor="@color/textColor1"
-        android:textSize="16sp" />
+        android:textSize="20sp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="2dp"
         android:background="@color/textBGColor"
-        android:letterSpacing="0.15"
+        android:letterSpacing="0.1"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
         android:text="age"
         android:textAllCaps="true"
         android:textColor="@color/textColor2"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:letterSpacing="0.025"
+        android:text="in minutes"
+        android:textAllCaps="true"
+        android:textColor="@color/textColor1"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/date_pick_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/btn_bg"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:letterSpacing="0.025"
+        android:text="Select Date"
+        android:textAllCaps="false"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/date_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:letterSpacing="0.025"
+        android:textAllCaps="true"
+        android:textColor="@color/textColor1"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:alpha="0.6"
+        android:letterSpacing="0.025"
+        android:text="Selected Date"
+        android:textColor="@color/textColor1"
+        android:textSize="17sp" />
+
+    <TextView
+        android:id="@+id/min_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="24dp"
+        android:letterSpacing="0.025"
+        android:textAllCaps="true"
+        android:textColor="@color/textColor1"
+        android:textSize="20sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:alpha="0.6"
+        android:letterSpacing="0.025"
+        android:text="Age In Minutes"
+        android:textColor="@color/textColor1"
+        android:textSize="17sp" />
 
 </LinearLayout>
