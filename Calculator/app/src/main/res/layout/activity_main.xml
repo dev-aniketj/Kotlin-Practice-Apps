@@ -14,10 +14,11 @@
         android:layout_marginBottom="8dp"
         android:gravity="end|right"
         android:letterSpacing="0.025"
-        android:maxLength="16"
+        android:maxLength="18"
         android:padding="4dp"
         android:textColor="@color/textColor"
-        android:textSize="34sp" />
+        android:textSize="34sp"
+        tools:ignore="RtlHardcoded,UnusedAttribute" />
 
     <include
         android:id="@+id/layout"

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -23,7 +24,8 @@
             android:onClick="onDigit"
             android:text="7"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_8"
@@ -38,7 +40,8 @@
             android:onClick="onDigit"
             android:text="8"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_9"
@@ -53,7 +56,8 @@
             android:onClick="onDigit"
             android:text="9"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_div"
@@ -68,8 +72,10 @@
             android:onClick="onOperator"
             android:text="/"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
     </LinearLayout>
+
     <!-- row 2 -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -89,7 +95,8 @@
             android:onClick="onDigit"
             android:text="4"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_5"
@@ -104,7 +111,8 @@
             android:onClick="onDigit"
             android:text="5"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_6"
@@ -119,7 +127,8 @@
             android:onClick="onDigit"
             android:text="6"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_mul"
@@ -134,8 +143,10 @@
             android:onClick="onOperator"
             android:text="*"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
     </LinearLayout>
+
     <!-- row 3 -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -155,7 +166,8 @@
             android:onClick="onDigit"
             android:text="1"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_2"
@@ -170,7 +182,8 @@
             android:onClick="onDigit"
             android:text="2"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_3"
@@ -185,7 +198,8 @@
             android:onClick="onDigit"
             android:text="3"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_sub"
@@ -200,8 +214,10 @@
             android:onClick="onOperator"
             android:text="-"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
     </LinearLayout>
+
     <!-- row 4 -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -221,7 +237,8 @@
             android:onClick="onDecimal"
             android:text="."
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_0"
@@ -236,7 +253,8 @@
             android:onClick="onDigit"
             android:text="0"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_clr"
@@ -251,7 +269,8 @@
             android:onClick="onClear"
             android:text="CLR"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
 
         <Button
             android:id="@+id/btn_add"
@@ -266,8 +285,10 @@
             android:onClick="onOperator"
             android:text="+"
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
     </LinearLayout>
+
     <!-- row 5 -->
     <LinearLayout
         android:layout_width="match_parent"
@@ -287,6 +308,8 @@
             android:onClick="onEqual"
             android:text="="
             android:textColor="@color/btnTextColor"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            tools:ignore="HardcodedText,KeyboardInaccessibleWidget,UnusedAttribute,UsingOnClickInXml" />
     </LinearLayout>
+
 </LinearLayout>
