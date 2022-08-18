@@ -9,10 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <!-- APP COLORS -->
-    <color name="color1">#2C3333</color>
-    <color name="color2">#395B64</color>
-    <color name="color3">#A5C9CA</color>
-    <color name="color4">#E7F6F2</color>
 
     <color name="statusBarColor">#395B64</color>
     <color name="mainBGColor">#E7F6F2</color>

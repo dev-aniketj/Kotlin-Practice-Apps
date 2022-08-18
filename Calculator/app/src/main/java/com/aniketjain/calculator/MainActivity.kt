@@ -55,23 +55,69 @@ class MainActivity : AppCompatActivity() {
             var value = binding.inputTv.text.toString()
             var prefix = ""
             try {
+                // checking minus sign is added in starting or not!!
                 if (value.startsWith("-")) {
                     prefix = "-"
                     value = value.substring(1)
                 }
-                if (value.contains("-")) {
-                    val splitValue = value.split("-")
-                    var one = splitValue[0]
-                    val two = splitValue[1]
-                    if (prefix.isNotEmpty()) {
-                        one += prefix
+                when {
+                    // subtraction
+                    value.contains("-") -> {
+                        val splitValue = value.split("-")
+                        var one = splitValue[0]
+                        val two = splitValue[1]
+                        if (prefix.isNotEmpty()) {
+                            one = prefix + one
+                        }
+                        binding.inputTv.text =
+                            removeZeroAfterDot("${one.toDouble() - two.toDouble()}")
                     }
-                    binding.inputTv.text = (one.toDouble() - two.toDouble()).toString()
+                    // addition
+                    value.contains("+") -> {
+                        val splitValue = value.split("+")
+                        var one = splitValue[0]
+                        val two = splitValue[1]
+                        if (prefix.isNotEmpty()) {
+                            one = prefix + one
+                        }
+                        binding.inputTv.text =
+                            removeZeroAfterDot("${one.toDouble() + two.toDouble()}")
+                    }
+                    // multiple
+                    value.contains("*") -> {
+                        val splitValue = value.split("*")
+                        var one = splitValue[0]
+                        val two = splitValue[1]
+                        if (prefix.isNotEmpty()) {
+                            one = prefix + one
+                        }
+                        binding.inputTv.text =
+                            removeZeroAfterDot("%.2f".format(one.toDouble() * two.toDouble()))
+                    }
+                    // divide
+                    value.contains("/") -> {
+                        val splitValue = value.split("/")
+                        var one = splitValue[0]
+                        val two = splitValue[1]
+                        if (prefix.isNotEmpty()) {
+                            one = prefix + one
+                        }
+                        binding.inputTv.text =
+                            removeZeroAfterDot("${one.toDouble() / two.toDouble()}")
+                    }
                 }
             } catch (e: ArithmeticException) {
                 e.printStackTrace()
             }
         }
+    }
+
+    private fun removeZeroAfterDot(result: String): String {
+        var value = result
+        if (result.contains(".0")) {
+            value = result.substring(0, result.length - 2)
+        }
+        return value
     }
 
     private fun isOperatorAdded(value: String): Boolean {
