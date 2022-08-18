@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.aniketjain.calculator.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+    lateinit var binding: ActivityMainBinding
 
     private var lastNumeric: Boolean = false
     private var lastDot: Boolean = false
@@ -39,6 +39,47 @@ class MainActivity : AppCompatActivity() {
             binding.inputTv.append(".")
             lastNumeric = false
             lastDot = true
+        }
+    }
+
+    fun onOperator(view: View) {
+        if (lastNumeric && !isOperatorAdded(binding.inputTv.text.toString())) {
+            binding.inputTv.append((view as Button).text)
+            lastNumeric = false
+            lastDot = false
+        }
+    }
+
+    fun onEqual(view: View) {
+        if (lastNumeric) {
+            var value = binding.inputTv.text.toString()
+            var prefix = ""
+            try {
+                if (value.startsWith("-")) {
+                    prefix = "-"
+                    value = value.substring(1)
+                }
+                if (value.contains("-")) {
+                    val splitValue = value.split("-")
+                    var one = splitValue[0]
+                    val two = splitValue[1]
+                    if (prefix.isNotEmpty()) {
+                        one += prefix
+                    }
+                    binding.inputTv.text = (one.toDouble() - two.toDouble()).toString()
+                }
+            } catch (e: ArithmeticException) {
+                e.printStackTrace()
+            }
+        }
+    }
+
+    private fun isOperatorAdded(value: String): Boolean {
+        return if (value.startsWith("-")) {
+            false
+        } else {
+            value.contains("/") || value.contains("*")
+                    || value.contains("+") || value.contains("-")
         }
     }
 }
