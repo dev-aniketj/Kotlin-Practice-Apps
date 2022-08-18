@@ -18,6 +18,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDigit"
             android:text="7"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -30,6 +33,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDigit"
             android:text="8"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -42,6 +48,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDigit"
             android:text="9"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -54,6 +63,8 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:text="/"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -72,6 +83,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDigit"
             android:text="4"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -84,6 +98,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDigit"
             android:text="5"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -96,6 +113,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDigit"
             android:text="6"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -108,6 +128,8 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:text="*"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -126,6 +148,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDigit"
             android:text="1"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -138,6 +163,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDigit"
             android:text="2"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -150,6 +178,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDigit"
             android:text="3"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -162,6 +193,8 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:text="-"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -180,6 +213,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDecimal"
             android:text="."
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -192,6 +228,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onDigit"
             android:text="0"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -204,6 +243,9 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="onClear"
             android:text="CLR"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -216,6 +258,8 @@
             android:layout_margin="3dp"
             android:layout_weight="1"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:text="+"
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
@@ -234,6 +278,8 @@
             android:layout_margin="3dp"
             android:layout_weight="4"
             android:background="@color/btnBG"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
             android:text="="
             android:textColor="@color/btnTextColor"
             android:textSize="20sp" />
