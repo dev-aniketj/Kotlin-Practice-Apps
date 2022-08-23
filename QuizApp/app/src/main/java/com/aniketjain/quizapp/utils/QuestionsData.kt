@@ -1,12 +1,16 @@
 package com.aniketjain.quizapp.utils
 
-import com.aniketjain.quizapp.model.QuestionModel
 import com.aniketjain.quizapp.R
+import com.aniketjain.quizapp.model.QuestionModel
 
 object QuestionsData {
-    private val list = ArrayList<QuestionModel>()
+    private var arrayList = ArrayList<QuestionModel>()
 
-    fun getQues(): ArrayList<QuestionModel> {
+    private fun setQues(list: ArrayList<QuestionModel>) {
+
+        // when ques call back the activity
+        list.clear()
+
         // ques 1
         list.add(
             QuestionModel(
@@ -33,8 +37,11 @@ object QuestionsData {
                 2
             )
         )
+    }
 
-        return list
+    fun getQues(): ArrayList<QuestionModel> {
+        setQues(arrayList)
+        return arrayList
     }
 
 }
