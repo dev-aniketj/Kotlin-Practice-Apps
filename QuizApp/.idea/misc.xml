@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/QuizApp/app/src/main/res/drawable/btn_bg.xml" value="0.1235" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/QuizApp/app/src/main/res/layout/activity_main.xml" value="0.18611111111111112" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/QuizApp/app/src/main/res/layout/activity_quiz_question.xml" value="0.1" />
       </map>
     </option>
   </component>

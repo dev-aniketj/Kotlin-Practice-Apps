@@ -14,4 +14,12 @@
     <color name="color3">#FF2E63</color>
     <color name="color4">#EAEAEA</color>
 
+    <color name="statusBarColor">#FF2E63</color>
+    <color name="mainBGColor">#EAEAEA</color>
+    <color name="textColor">#252A34</color>
+    <color name="hintTextColor">#A1252A34</color>
+    <color name="btnColor">#08D9D6</color>
+    <color name="btnTextColor">#EAEAEA</color>
+
+
 </resources>
