@@ -13,8 +13,10 @@ class HomeActivity : AppCompatActivity() {
 
         // setup for binding
         binding = ActivityHomeBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
+
+        //hide the title bar
+        supportActionBar!!.hide()
 
         // setup for listeners
         listeners()
@@ -32,4 +34,6 @@ class HomeActivity : AppCompatActivity() {
             }
         }
     }
+
+
 }

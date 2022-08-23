@@ -83,6 +83,7 @@
                 android:letterSpacing="0.1"
                 android:padding="4dp"
                 android:text="Start"
+                android:textSize="19sp"
                 android:textColor="@color/btnTextColor" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
