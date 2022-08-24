@@ -20,6 +20,7 @@
     <color name="btnColor">#08D9D6</color>
     <color name="btnTextColor">#EAEAEA</color>
     <color name="optionBGColor">#F4F4F4</color>
-
+    <color name="wrongOptionBGColor">#FF2E63</color>
+    <color name="correctOptionBGColor">#6DFF2E</color>
 
 </resources>

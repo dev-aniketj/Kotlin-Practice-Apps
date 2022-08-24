@@ -37,6 +37,19 @@ object QuestionsData {
                 2
             )
         )
+        // ques 3
+        list.add(
+            QuestionModel(
+                2,
+                "What country does this flag belong to ? 2",
+                R.drawable.ic_flag_of_belgium,
+                "Argentina",
+                "Belgium",
+                "Armenia",
+                "America",
+                2
+            )
+        )
     }
 
     fun getQues(): ArrayList<QuestionModel> {

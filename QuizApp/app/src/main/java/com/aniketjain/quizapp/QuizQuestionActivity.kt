@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.aniketjain.quizapp.databinding.ActivityQuizQuestionBinding
+import com.aniketjain.quizapp.model.QuestionModel
 import com.aniketjain.quizapp.utils.QuestionsData
 
 class QuizQuestionActivity : AppCompatActivity() {
@@ -15,9 +16,12 @@ class QuizQuestionActivity : AppCompatActivity() {
     private lateinit var binding: ActivityQuizQuestionBinding
 
     private val quesList = QuestionsData.getQues()
+    private lateinit var ques: QuestionModel
     private var currentPos = 1
     private var selectedAnswer = 0
     private var marks = 0
+
+    private var nextQues_flag = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,17 +39,32 @@ class QuizQuestionActivity : AppCompatActivity() {
         listeners()
     }
 
+
+    /**
+     * LISTENER
+     */
+
     @SuppressLint("SetTextI18n")
     private fun listeners() {
         // when user click on submit
         binding.submitBtn.setOnClickListener {
-            checkAnswer(currentPos)
-            if (quesList.size > currentPos) {
-                currentPos++
-                questionAsk(currentPos)
+            btnText()
+            if (nextQues_flag) {
+                if (quesList.size > currentPos) {
+                    currentPos++
+                    questionAsk(currentPos)
+                }
             }
-            checkLastQues(currentPos)
-
+            if (!nextQues_flag && selectedAnswer != 0) {
+                // when answer is wrong
+                if (ques.correctAns != selectedAnswer) {
+                    answerView(selectedAnswer, R.drawable.wrong_option_bg)
+                }
+                // drawable overload background on it, so we are just applying
+                // correct answer background on it.
+                answerView(ques.correctAns, R.drawable.correct_option_bg)
+                checkAnswer()
+            }
         }
 
         binding.option1Tv.setOnClickListener {
@@ -66,6 +85,12 @@ class QuizQuestionActivity : AppCompatActivity() {
         }
     }
 
+
+    /**
+     * OPTIONS
+     */
+
+    // set all text as normal or default when user select another option
     private fun defaultOptionsView() {
         val options = ArrayList<TextView>()
         options.add(binding.option1Tv)
@@ -79,17 +104,38 @@ class QuizQuestionActivity : AppCompatActivity() {
         }
     }
 
+    // when user select the option
     private fun selectedOptionsView(textView: TextView) {
         defaultOptionsView()
-
         textView.setTypeface(textView.typeface, Typeface.BOLD)
         textView.background = ContextCompat.getDrawable(this, R.drawable.selected_option_bg)
-
     }
+
+    private fun answerView(answer: Int, drawable: Int) {
+        when (answer) {
+            1 -> {
+                binding.option1Tv.background = ContextCompat.getDrawable(this, drawable)
+            }
+            2 -> {
+                binding.option2Tv.background = ContextCompat.getDrawable(this, drawable)
+            }
+            3 -> {
+                binding.option3Tv.background = ContextCompat.getDrawable(this, drawable)
+            }
+            4 -> {
+                binding.option4Tv.background = ContextCompat.getDrawable(this, drawable)
+            }
+        }
+    }
+
+    /**
+     * QUESTION
+     * ANSWER
+     */
 
     @SuppressLint("SetTextI18n")
     private fun questionAsk(currentPos: Int) {
-        val ques = quesList[currentPos - 1]
+        ques = quesList[currentPos - 1]
         binding.progressBar.progress = currentPos
         binding.progressBarTv.text = "$currentPos/${quesList.size}"
         binding.questionTv.text = ques.question
@@ -98,21 +144,33 @@ class QuizQuestionActivity : AppCompatActivity() {
         binding.option2Tv.text = ques.option2
         binding.option3Tv.text = ques.option3
         binding.option4Tv.text = ques.option4
+
+        // when user start new question, the flag is FALSE
+        nextQues_flag = false
+        selectedAnswer = 0
+        defaultOptionsView()
+
     }
 
-    private fun checkAnswer(currentPos: Int) {
-        if (selectedAnswer == quesList[currentPos - 1].correctAns) {
+    private fun checkAnswer() {
+        if (selectedAnswer == ques.correctAns) {
             marks++
         }
+        nextQues_flag = true
         Toast.makeText(this, marks.toString(), Toast.LENGTH_SHORT).show()
     }
 
-    @SuppressLint("SetTextI18n")
-    private fun checkLastQues(currentPos: Int) {
-        // set text for last question
+    private fun btnText() {
+        // set text for last question, otherwise go ahead
+        if (!nextQues_flag) {
+            binding.submitBtn.text = "Go To Next"
+        } else {
+            binding.submitBtn.text = "Submit"
+        }
+
         if (quesList.size == currentPos) {
             binding.submitBtn.text = "Finish"
         }
-    }
 
+    }
 }
