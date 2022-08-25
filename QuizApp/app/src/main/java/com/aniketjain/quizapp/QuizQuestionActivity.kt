@@ -5,7 +5,6 @@ import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.aniketjain.quizapp.databinding.ActivityQuizQuestionBinding
@@ -15,14 +14,15 @@ import com.aniketjain.quizapp.utils.QuestionsData
 class QuizQuestionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityQuizQuestionBinding
-private var userName : String = ""
+    private var userName: String = ""
     private val quesList = QuestionsData.getQues()
     private lateinit var ques: QuestionModel
     private var currentPos = 1
     private var selectedAnswer = 0
     private var marks = 0
 
-    private var nextQues_flag = false
+    private var nextQuesFlag = false
+    private var finishFlag = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +43,6 @@ private var userName : String = ""
         listeners()
     }
 
-
     /**
      * LISTENER
      */
@@ -52,19 +51,16 @@ private var userName : String = ""
     private fun listeners() {
         // when user click on submit
         binding.submitBtn.setOnClickListener {
+            checkFinish()
             btnText()
-            if(quesList.size == currentPos){
-                val intent  = Intent(this, FinishActivity::class.java)
-                intent.putExtra("name", userName)
-                startActivity(intent)
-            }
-            if (nextQues_flag) {
+
+            if (nextQuesFlag) {
                 if (quesList.size > currentPos) {
                     currentPos++
                     questionAsk(currentPos)
                 }
             }
-            if (!nextQues_flag && selectedAnswer != 0) {
+            if (!nextQuesFlag && selectedAnswer != 0) {
                 // when answer is wrong
                 if (ques.correctAns != selectedAnswer) {
                     answerView(selectedAnswer, R.drawable.wrong_option_bg)
@@ -93,7 +89,6 @@ private var userName : String = ""
             selectedAnswer = 4
         }
     }
-
 
     /**
      * OPTIONS
@@ -155,7 +150,7 @@ private var userName : String = ""
         binding.option4Tv.text = ques.option4
 
         // when user start new question, the flag is FALSE
-        nextQues_flag = false
+        nextQuesFlag = false
         selectedAnswer = 0
         defaultOptionsView()
 
@@ -165,13 +160,16 @@ private var userName : String = ""
         if (selectedAnswer == ques.correctAns) {
             marks++
         }
-        nextQues_flag = true
-        Toast.makeText(this, marks.toString(), Toast.LENGTH_SHORT).show()
+        nextQuesFlag = true
     }
+
+    /**
+     * CHANGE BUTTON TEXT
+     */
 
     private fun btnText() {
         // set text for last question, otherwise go ahead
-        if (!nextQues_flag) {
+        if (!nextQuesFlag) {
             binding.submitBtn.text = "Go To Next"
         } else {
             binding.submitBtn.text = "Submit"
@@ -179,7 +177,21 @@ private var userName : String = ""
 
         if (quesList.size == currentPos) {
             binding.submitBtn.text = "Finish"
+            finishFlag = true
         }
-
     }
+
+    /**
+     * CHECK LAST QUESTION
+     */
+
+    private fun checkFinish() {
+        if (finishFlag) {
+            val intent = Intent(this, FinalActivity::class.java)
+            intent.putExtra("name", userName)
+            intent.putExtra("marks", marks)
+            startActivity(intent)
+        }
+    }
+
 }

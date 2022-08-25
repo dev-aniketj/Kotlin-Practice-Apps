@@ -11,8 +11,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizApp">
         <activity
-            android:name=".FinishActivity"
-            android:exported="false" />
+            android:name=".FinalActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity" />
         <activity
             android:name=".QuizQuestionActivity"
             android:exported="false"
