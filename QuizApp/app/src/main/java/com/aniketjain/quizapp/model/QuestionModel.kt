@@ -1,7 +1,6 @@
 package com.aniketjain.quizapp.model
 
 data class QuestionModel(
-    val  id: Int,
     val question: String,
     val image: Int,
     val option1: String,
