@@ -190,6 +190,7 @@ class QuizQuestionActivity : AppCompatActivity() {
             val intent = Intent(this, FinalActivity::class.java)
             intent.putExtra("name", userName)
             intent.putExtra("marks", marks)
+            intent.putExtra("outOf", binding.progressBar.max)
             startActivity(intent)
         }
     }
