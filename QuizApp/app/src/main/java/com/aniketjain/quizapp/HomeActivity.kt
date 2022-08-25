@@ -30,6 +30,7 @@ class HomeActivity : AppCompatActivity() {
                 binding.nameEt.error = "Please enter the name"
             } else {
                 val intent = Intent(this, QuizQuestionActivity::class.java)
+                intent.putExtra("name", binding.nameEt.text.toString())
                 startActivity(intent)
             }
         }

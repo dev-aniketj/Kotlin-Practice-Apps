@@ -1,6 +1,7 @@
 package com.aniketjain.quizapp
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Typeface
 import android.os.Bundle
 import android.widget.TextView
@@ -14,7 +15,7 @@ import com.aniketjain.quizapp.utils.QuestionsData
 class QuizQuestionActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityQuizQuestionBinding
-
+private var userName : String = ""
     private val quesList = QuestionsData.getQues()
     private lateinit var ques: QuestionModel
     private var currentPos = 1
@@ -29,6 +30,9 @@ class QuizQuestionActivity : AppCompatActivity() {
         // setup for binding
         binding = ActivityQuizQuestionBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // set username
+        userName = intent.getStringExtra("name").toString()
 
         // progress bar max value
         binding.progressBar.max = quesList.size
@@ -49,6 +53,11 @@ class QuizQuestionActivity : AppCompatActivity() {
         // when user click on submit
         binding.submitBtn.setOnClickListener {
             btnText()
+            if(quesList.size == currentPos){
+                val intent  = Intent(this, FinishActivity::class.java)
+                intent.putExtra("name", userName)
+                startActivity(intent)
+            }
             if (nextQues_flag) {
                 if (quesList.size > currentPos) {
                     currentPos++
