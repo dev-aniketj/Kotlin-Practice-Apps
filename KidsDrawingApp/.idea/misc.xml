@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/KidsDrawingApp/app/src/main/res/drawable/brush_size2.xml" value="0.114" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/KidsDrawingApp/app/src/main/res/drawable/brush_size3.xml" value="0.114" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/KidsDrawingApp/app/src/main/res/drawable/brush_size4.xml" value="0.1435" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/KidsDrawingApp/app/src/main/res/drawable/brush_size5.xml" value="0.1435" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/KidsDrawingApp/app/src/main/res/drawable/drawing_view_bg.xml" value="0.107" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/KidsDrawingApp/app/src/main/res/drawable/ic_baseline_brush_24.xml" value="0.1435" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/KidsDrawingApp/app/src/main/res/drawable/small.xml" value="0.114" />
         <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/KidsDrawingApp/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Aniket/AndroidStudioProjects/KotlinProjects/Udemy/KidsDrawingApp/app/src/main/res/layout/dialog_brush_size.xml" value="0.18" />
       </map>
     </option>
   </component>

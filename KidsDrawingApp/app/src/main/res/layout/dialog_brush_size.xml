@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageButton
+        android:id="@+id/brush_size1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Brush 1"
+        android:src="@drawable/brush_size1"
+        tools:ignore="HardcodedText" />
+
+    <ImageButton
+        android:id="@+id/brush_size2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Brush 2"
+        android:src="@drawable/brush_size2" />
+
+    <ImageButton
+        android:id="@+id/brush_size3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Brush 3"
+        android:src="@drawable/brush_size3" />
+
+    <ImageButton
+        android:id="@+id/brush_size4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Brush 4"
+        android:src="@drawable/brush_size4" />
+
+    <ImageButton
+        android:id="@+id/brush_size5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="Brush 5"
+        android:src="@drawable/brush_size5" />
+
+</LinearLayout>
