@@ -69,6 +69,13 @@ class HomeActivity : AppCompatActivity() {
             val imageButton = view as ImageButton
             val colorTag = imageButton.tag.toString()
             binding.drawingView.setColor(colorTag)
+            imageButton.setImageDrawable(
+                ContextCompat.getDrawable(this, R.drawable.palette_selected)
+            )
+            mImageButtonCurrentPaint!!.setImageDrawable(
+                ContextCompat.getDrawable(this, R.drawable.palette_normal)
+            )
+            mImageButtonCurrentPaint = view
         }
     }
 }

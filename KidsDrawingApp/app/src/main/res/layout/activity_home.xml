@@ -120,6 +120,17 @@
             android:onClick="paintClicked"
             android:src="@drawable/palette_normal"
             android:tag="@color/purple" />
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_margin="2dp"
+            android:background="@color/white"
+            android:clickable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:onClick="paintClicked"
+            android:src="@drawable/palette_normal"
+            android:tag="@color/white" />
     </LinearLayout>
 
     <ImageButton
