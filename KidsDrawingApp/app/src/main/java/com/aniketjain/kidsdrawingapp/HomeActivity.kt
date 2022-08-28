@@ -2,12 +2,18 @@ package com.aniketjain.kidsdrawingapp
 
 import android.app.Dialog
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.core.view.get
 import com.aniketjain.kidsdrawingapp.databinding.ActivityHomeBinding
 
 class HomeActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityHomeBinding
+    private var mImageButtonCurrentPaint: ImageButton? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -17,6 +23,12 @@ class HomeActivity : AppCompatActivity() {
 
         binding.drawingView.setSizeForBrush(5.toFloat())
         binding.brushIb.setOnClickListener { showBrushSizeChooserDialog() }
+
+        mImageButtonCurrentPaint = binding.paletteLl[1] as ImageButton  // set black as default
+        mImageButtonCurrentPaint!!.setImageDrawable(
+            ContextCompat.getDrawable(this, R.drawable.palette_selected)
+        )
+
 
     }
 
@@ -50,5 +62,13 @@ class HomeActivity : AppCompatActivity() {
             brushDialog.dismiss()
         }
         brushDialog.show()
+    }
+
+    fun paintClicked(view: View) {
+        if (view !== mImageButtonCurrentPaint) {
+            val imageButton = view as ImageButton
+            val colorTag = imageButton.tag.toString()
+            binding.drawingView.setColor(colorTag)
+        }
     }
 }
