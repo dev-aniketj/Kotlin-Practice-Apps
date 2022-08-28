@@ -3,11 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EFEFEF"
     tools:context=".HomeActivity">
 
     <com.aniketjain.kidsdrawingapp.view.DrawingView
         android:id="@+id/drawing_view"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:background="@drawable/drawing_view_bg"
+        android:padding="12dp" />
 
 </RelativeLayout>

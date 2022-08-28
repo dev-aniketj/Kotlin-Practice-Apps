@@ -47,7 +47,7 @@ class DrawingView(context: Context, attrs: AttributeSet) : View(context, attrs) 
         super.onDraw(canvas)
         canvas.drawBitmap(mCanvasBitmap!!, 0f, 0f, mCanvasPaint)
 
-        for(path in mPaths){
+        for (path in mPaths) {
             mDrawPaint!!.strokeWidth = path.brushThickness
             mDrawPaint!!.color = path.color
             canvas.drawPath(path, mDrawPaint!!)
